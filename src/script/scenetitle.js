@@ -1,6 +1,6 @@
 class SceneTitle {
     constructor(game) {
-
+        game.menu = false
     }
 
     loop(game) {
@@ -8,13 +8,15 @@ class SceneTitle {
     }
 
     render(game) {
-        Render.init(game.ctx)
-        Render.clearCanvas(game.canvas, game.ctx)
-        Render.fillCanvas(game.canvas, game.ctx)
+        let ctx = game.ctx
+        let canvas = game.canvas
+        Render.init(ctx)
+        Render.clearCanvas(canvas, ctx)
+        Render.fillCanvas(canvas, ctx)
 
-        Render.strokeRectUI(game.ctx, UI.title.buttonStart)
-        Render.strokeRectUI(game.ctx, UI.title.buttonErase)
-        Render.strokeRectUI(game.ctx, UI.title.buttonLang)
+        Render.strokeRectUI(ctx, UI.title.buttonStart)
+        Render.strokeRectUI(ctx, UI.title.buttonErase)
+        Render.strokeRectUI(ctx, UI.title.buttonLang)
     }
 
     keyDown(game, key) {

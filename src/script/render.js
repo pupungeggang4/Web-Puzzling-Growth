@@ -18,6 +18,19 @@ class Render {
         ctx.fillStyle = 'black'
     }
 
+    static renderMenu(game) {
+        let ctx = game.ctx
+        ctx.fillStyle = 'white'
+        Render.fillRectUI(ctx, UI.menu.rect)
+        Render.strokeRectUI(ctx, UI.menu.rect)
+        ctx.fillStyle = 'black'
+
+        Render.strokeRectUI(ctx, UI.menu.buttonResume)
+        Render.strokeRectUI(ctx, UI.menu.buttonRestart)
+        Render.strokeRectUI(ctx, UI.menu.buttonBack)
+        Render.strokeRectUI(ctx, UI.menu.buttonExit)
+    }
+
     static strokeRectUI(ctx, rect) {
         ctx.strokeRect(rect[0], rect[1], rect[2], rect[3])
     }
